@@ -1,23 +1,55 @@
 import "./App.css";
-import { Component } from "react";
+import Encabezado from "./components/Encabezado";
+import Lista from "./components/Lista";
+import Saludo from "./components/Saludo";
 
-class ClassComponent extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Hola desde el componente de clase</h2>
-      </div>
-    );
-  }
-}
+const Padre = (props) => {
+  return (
+    <div
+      style={{
+        width: "75%",
+        background: "green",
+        height: "200px",
+        padding: "20px",
+      }}
+    >
+      <h5>Soy un padre</h5>
+      {props.children}
+    </div>
+  );
+};
+
+const Hijo = (props) => {
+  return (
+    <div
+      style={{
+        width: "50%",
+        background: "#FA8072",
+        height: "100px",
+        padding: "10px",
+        color: "white",
+        fontSize: "30px",
+      }}
+    >
+      {props.autor}
+    </div>
+  );
+};
 
 function App() {
-  console.log("hola desde clg");
   return (
     <>
       <div className="App">
-        <h1>Hola mundo desde App!</h1>
-        <ClassComponent />
+        <Encabezado>Este es el encabezado</Encabezado>
+        <Saludo nombre="Juan" />
+        <Lista titulo="Mi lista">
+          <Saludo nombre="pedro" />
+          <Saludo nombre="maria" />
+          <Saludo nombre="becerra" />
+        </Lista>
+        <Padre>
+          <Hijo autor="Soy un hijo" />
+        </Padre>
       </div>
     </>
   );
