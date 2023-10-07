@@ -1,11 +1,11 @@
 import { Fragment } from "react";
 
-export default function Lista(props) {
+export default function Lista({ titulo, children }) {
   return (
     <Fragment>
-      <h2>{props.titulo}</h2>
+      <h2>{titulo}</h2>
       <ul>
-        {props.children.map((item) => {
+        {children.map((item) => {
           return <li>{item}</li>;
         })}
       </ul>

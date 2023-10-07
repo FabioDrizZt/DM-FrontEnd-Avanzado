@@ -1,3 +1,3 @@
-export default function Saludo(props) {
-  return <p>Hola, {props.nombre}</p>;
+export default function Saludo({ nombre }) {
+  return <p>Hola, {nombre}!!! 😎</p>;
 }
