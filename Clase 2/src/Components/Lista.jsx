@@ -13,6 +13,7 @@ export default function Lista() {
     <li key={elemento.id}>{elemento.texto}</li>
   ));
 
+  
   return (
     <React.Fragment>
       <h1>Lista de elementos</h1>
