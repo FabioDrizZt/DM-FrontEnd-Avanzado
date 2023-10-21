@@ -1,6 +1,6 @@
 import styles from './StatusTripulante.module.css'
 
-export default function StatusTripulante({ tripulantes }) {
+export default function StatusTripulante ({ tripulantes }) {
   return (
     <ul className={styles.ul}>
       {tripulantes.map(({ nombre, esImpostor }, index) => (
