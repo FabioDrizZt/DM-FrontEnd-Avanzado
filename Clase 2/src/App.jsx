@@ -1,12 +1,12 @@
-import "./App.css";
-import Lista from "./Components/Lista";
+import './App.css'
+import Lista from './Components/Lista'
 
-function App() {
+function App () {
   return (
     <>
       <Lista />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
