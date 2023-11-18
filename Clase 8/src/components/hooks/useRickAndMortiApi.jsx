@@ -1,16 +1,17 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import axios from 'axios'
 
 export default function useRickAndMortiApi () {
   const [index, setIndex] = useState(1)
   const [character, setCharacter] = useState(null)
-  const url = `https://rickandmortyapi.com/api/character/${index}`
+  const url = useMemo(
+    () => `https://rickandmortyapi.com/api/character/${index}`,
+    [index]
+  )
 
   const handlerClick = useCallback(
     (count) => {
-      setIndex(
-        index + count === 827 ? 1 : index + count === 0 ? 826 : index + count
-      )
+      setIndex((index + count + 826) % 826 || 826)
     },
     [index]
   )
