@@ -7,7 +7,7 @@ export default function Pokemon () {
   const url = `https://pokeapi.co/api/v2/pokemon/${name}`
 
   useEffect(() => {
-    axios(url).then((res) => setPoke(res.data))
+    axios(url).then((r) => setPoke(r.data))
   }, [name])
 
   return (
